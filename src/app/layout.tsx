@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/layout/Navbar";
+import HeaderSlider from "@/components/layout/HeaderSlide";
+import { Footer } from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,33 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
+        {/* HeaderSlider */}
+        <HeaderSlider
+          heightClass="h-[60vh] md:h-[80vh]"
+          slides={[
+            {
+              src: "/home/header1.webp",
+              alt: "Bags manufacturing",
+              title1: "Más de 30 años de experiencia",
+              title2: "brindándote seguridad y confianza en cada trámite.",
+              paragraph: "Our products are exempt under the United States/Mexico/Canada Agreement (USMCA) and Tratado Mexico Estados Unidos Canada (T-MEC).",
+            },
+            {
+              src: "/home/header2.webp",
+              title1: "Más de 30 años de experiencia",
+              title2: "brindándote seguridad y confianza en cada trámite.",
+              paragraph: "Our products are exempt under the United States/Mexico/Canada Agreement (USMCA) and Tratado Mexico Estados Unidos Canada (T-MEC).",
+            },
+            {
+              src: "/home/header3.webp",
+              title1: "Más de 30 años de experiencia",
+              title2: "brindándote seguridad y confianza en cada trámite.",
+              paragraph: "Our products are exempt under the United States/Mexico/Canada Agreement (USMCA) and Tratado Mexico Estados Unidos Canada (T-MEC).",
+            },
+          ]} />
         {children}
+        <Footer />
       </body>
     </html>
   );

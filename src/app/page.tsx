@@ -1,103 +1,123 @@
+"use client";
+
+import ServicesSection from "@/components/layout/ServicesSection";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  <>
+  <motion.div
+      className="relative w-full bg-cover bg-center bg-no-repeat py-12 px-6 md:px-12"
+      style={{ backgroundImage: "url('/home/torre.png')" }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        {/* Imagen izquierda (entra desde la izquierda) */}
+        <motion.div
+          className="flex justify-center order-1"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <img
+            src="/home/logo170.png"
+            alt="Notaría Pública 170 — Logotipo"
+            className="max-w-sm w-full object-contain"
+            loading="lazy"
+          />
+        </motion.div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        {/* Texto derecha (entra desde la derecha) */}
+        <motion.div
+          className="text-gray-800 order-2"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.35 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <p className="mb-4 text-lg font-bold leading-relaxed">
+            En Notaría Pública 170, el Licenciado Jesús Alberto Humarán Castellanos y su equipo ofrecen servicios
+            notariales con más de tres décadas de trayectoria, consolidando una reputación de seriedad, ética y
+            compromiso con la comunidad.
+          </p>
+          <p className="text-lg leading-relaxed">
+            Nuestra misión es dar certeza legal a sus actos y negocios jurídicos, acompañándolo con atención
+            personalizada en cada paso.
+          </p>
+        </motion.div>
+      </div>
+    </motion.div>
+
+  <ServicesSection />
+
+<motion.section
+      className="relative w-full py-12 px-6 md:px-12 overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {/* Fondo con Ken Burns sutil */}
+      <motion.img
+        src="/home/humaranbg.webp"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-center -z-10 pointer-events-none"
+        initial={{ scale: 1.02, opacity: 0 }}
+        whileInView={{
+          scale: 1.06,
+          opacity: 1,
+        }}
+        transition={{ duration: 1.0, ease: "easeOut" }}
+        viewport={{ once: true }}
+      />
+
+      {/* Contenido */}
+      <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        {/* Imagen izquierda */}
+        <motion.div
+          className="flex justify-center"
+          initial={{ x: -80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <img
+            src="/home/humaran.png"
+            alt="Imagen descriptiva"
+            className="max-w-sm w-full object-contain"
+            loading="lazy"
+          />
+        </motion.div>
+
+        {/* Texto derecha */}
+        <motion.div
+          className="text-gray-800"
+          initial={{ x: 80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <motion.p
+            className="mb-4 text-lg leading-relaxed"
+            initial={{ y: 12, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.35 }}
+            viewport={{ once: true }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            Con más de 30 años de experiencia, el Lic. Humarán se ha consolidado como un referente en el ámbito notarial en Mazatlán. Su compromiso es ofrecer un servicio confiable, transparente y cercano, garantizando certeza y tranquilidad en cada trámite.
+          </motion.p>          
+        </motion.div>
+      </div>
+    </motion.section>
+
+
+</>
+
   );
 }
