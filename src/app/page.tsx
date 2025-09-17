@@ -7,8 +7,10 @@ import Image from "next/image";
 export default function Home() {
   return (
   <>
+  
   <motion.div
-      className="relative w-full bg-cover bg-center bg-no-repeat py-12 px-6 md:px-12"
+      id="notaria"      
+      className="relative w-full bg-cover bg-center bg-no-repeat py-12 px-6 md:px-12 scroll-mt-54 md:scroll-mt-74"
       style={{ backgroundImage: "url('/home/torre.png')" }}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -56,7 +58,8 @@ export default function Home() {
   <ServicesSection />
 
 <motion.section
-      className="relative w-full py-12 px-6 md:px-12 overflow-hidden"
+      id="notario"
+      className="relative w-full py-12 px-6 md:px-12 overflow-hidden scroll-mt-54 md:scroll-mt-74"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

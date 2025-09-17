@@ -36,7 +36,7 @@ export function Navbar() {
           <div className="hidden lg:block">
             <div className="flex items-center space-x-1">
               <Link
-                href="/notaria"
+                href="#notaria"
                 className="text-slate-200 hover:text-white px-4 py-2 text-sm font-semibold 
                          transition-all duration-200 rounded-lg hover:bg-slate-800/50
                          relative group"
@@ -48,7 +48,7 @@ export function Navbar() {
                 ></span>
               </Link>
               <Link
-                href="/servicios"
+                href="#servicios"
                 className="text-slate-200 hover:text-white px-4 py-2 text-sm font-semibold 
                          transition-all duration-200 rounded-lg hover:bg-slate-800/50
                          relative group"
@@ -60,7 +60,7 @@ export function Navbar() {
                 ></span>
               </Link>
               <Link
-                href="/notario"
+                href="#notario"
                 className="text-slate-200 hover:text-white px-4 py-2 text-sm font-semibold 
                          transition-all duration-200 rounded-lg hover:bg-slate-800/50
                          relative group"
@@ -72,7 +72,7 @@ export function Navbar() {
                 ></span>
               </Link>
               <Link
-                href="/contacto"
+                href="#contacto"
                 className="text-slate-200 hover:text-white px-4 py-2 text-sm font-semibold 
                          transition-all duration-200 rounded-lg hover:bg-slate-800/50
                          relative group"
@@ -133,7 +133,7 @@ export function Navbar() {
                           border-t border-slate-700 rounded-b-lg"
             >
               <Link
-                href="/notaria"
+                href="#notaria"
                 className="block px-4 py-3 text-base font-semibold text-slate-200 
                          hover:bg-slate-700/50 hover:text-white rounded-lg transition-all duration-200"
                 onClick={() => setIsOpen(false)}
@@ -141,7 +141,7 @@ export function Navbar() {
                 Notaría
               </Link>
               <Link
-                href="/servicios"
+                href="#servicios"
                 className="block px-4 py-3 text-base font-semibold text-slate-200 
                          hover:bg-slate-700/50 hover:text-white rounded-lg transition-all duration-200"
                 onClick={() => setIsOpen(false)}
@@ -149,7 +149,7 @@ export function Navbar() {
                 Servicios
               </Link>
               <Link
-                href="/notario"
+                href="#notario"
                 className="block px-4 py-3 text-base font-semibold text-slate-200 
                          hover:bg-slate-700/50 hover:text-white rounded-lg transition-all duration-200"
                 onClick={() => setIsOpen(false)}
@@ -157,7 +157,7 @@ export function Navbar() {
                 Notario
               </Link>
               <Link
-                href="/contacto"
+                href="#contacto"
                 className="block px-4 py-3 text-base font-semibold text-slate-200 
                          hover:bg-slate-700/50 hover:text-white rounded-lg transition-all duration-200"
                 onClick={() => setIsOpen(false)}

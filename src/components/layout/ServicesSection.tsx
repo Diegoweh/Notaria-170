@@ -21,7 +21,8 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
   return (
     <motion.div
-      className="text-center p-6 rounded-xl bg-white shadow-sm border border-gray-100"
+      id="servicios"
+      className="text-center p-6 rounded-xl bg-white shadow-sm border border-gray-100 scroll-mt-54 md:scroll-mt-74"
       initial={{ y: 24, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 * index }}

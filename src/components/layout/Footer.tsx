@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin, Clock, Shield, Award } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer id="contacto" className="bg-slate-900 text-white">
       {/* Main footer content */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
