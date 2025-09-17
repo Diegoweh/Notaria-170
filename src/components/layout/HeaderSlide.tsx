@@ -113,17 +113,22 @@ export default function HeaderSlider({
 
               {/* Text block center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white select-none px-4">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
-                    {s.title1}
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+                  {s.title1}
                 </h2>
+
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-white mt-1">
                     {s.title2}
                 </h3>
-                <button
-                    className="mt-4 px-6 py-2 bg-none border-2 text-white font-medium rounded-xl hover:bg-amber-400 hover:text-gray-700 hover:border-amber-400 transition active:scale-95"
+                <a
+                  href="https://wa.me/526699950860"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 px-6 py-2 bg-none border-2 text-white font-medium rounded-xl hover:bg-amber-400 hover:text-gray-700 hover:border-amber-400 transition active:scale-95"
                 >
-                    Contáctanos
-                </button>
+                  Contáctanos
+                </a>
+
                 </div>
             </div>
           ))}

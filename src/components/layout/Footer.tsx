@@ -35,11 +35,23 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-                <span className="text-slate-300">669 995 0860</span>
+                <a
+                  href="https://wa.me/526699950860"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-300 hover:text-yellow-400 transition-colors"
+                >
+                  669 995 0860
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-                <span className="text-slate-300">contacto@humaran.com</span>
+                <a
+                  href="mailto:contacto@humaranmaz.com"
+                  className="text-slate-300 hover:text-yellow-400 transition-colors"
+                >
+                  contacto@humaranmaz.com
+                </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
@@ -51,6 +63,7 @@ export function Footer() {
               </div>
             </div>
           </div>
+
 
           {/* Hours */}
           <div className="space-y-4">
