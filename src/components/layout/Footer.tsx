@@ -33,38 +33,31 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Contacto</h4>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[
-                { number: "669 985 0791", link: "https://wa.me/526699850791" },
-                { number: "669 981 1028", link: "https://wa.me/526699811028" },
-                { number: "669 982 4024", link: "https://wa.me/526699824024" },
-                { number: "669 982 1465", link: "https://wa.me/526699821465" },
-                { number: "669 985 0860", link: "https://wa.me/526699850860" },
-              ].map((tel, i) => (
-                <div key={i} className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-                  <a
-                    href={tel.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-300 hover:text-yellow-400 transition-colors text-sm"
-                  >
-                    {tel.number}
-                  </a>
-                </div>
-              ))}
+            {/* Primera fila: 3 números */}
+            <div className="flex items-start space-x-3">
+              <Phone className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-1" />
+              <div className="flex flex-wrap gap-x-1 gap-y-1 text-slate-300 text-sm">
+                <span>669 985 0791, 669 981 1028, 669 982 4024 </span>
+                
+              </div>
             </div>
 
+            {/* Segunda fila: 2 números */}
+            <div className="flex items-start space-x-3">
+              <Phone className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-1" />
+              <div className="flex flex-wrap gap-x-1 gap-y-1 text-slate-300 text-sm">
+                <span>669 982 1465, 669 985 0860</span>
+                
+              </div>
+            </div>
+
+            {/* Email */}
             <div className="flex items-center space-x-3">
               <Mail className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-              <a
-                href="mailto:contacto@humaranmaz.com"
-                className="text-slate-300 hover:text-yellow-400 transition-colors"
-              >
-                contacto@humaranmaz.com
-              </a>
+              <span className="text-slate-300">contacto@humaranmaz.com</span>
             </div>
 
+            {/* Dirección */}
             <div className="flex items-start space-x-3">
               <MapPin className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
               <div className="text-slate-300 text-sm">
@@ -76,8 +69,6 @@ export function Footer() {
           </div>
 
 
-
-
           {/* Hours */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Horarios</h4>
@@ -87,7 +78,7 @@ export function Footer() {
                 <p>Lunes - Viernes</p>
                 <p>9:00 AM - 2:00 PM & 4:00 PM - 7:00 PM</p>
                 <p className="mt-2">Sábados</p>
-                <p>9:00 AM - 2:00 PM</p>
+                <p>9:30 AM - 1:00 PM</p>
               </div>
             </div>
           </div>
