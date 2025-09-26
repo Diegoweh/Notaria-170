@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Building2, Handshake, Home, FileText, ChevronDown } from "lucide-react"
+import { motion } from "framer-motion"
+import { Building2, Handshake, Home, FileText } from "lucide-react"
 
 type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>
 
@@ -13,11 +12,23 @@ type Service = {
   extras?: string[] // <- opcional, solo para "OTROS SERVICIOS"
 }
 
+const listVariants = {
+  hidden: { opacity: 0, height: 0 },
+  visible: {
+    opacity: 1,
+    height: "auto",
+    transition: { duration: 0.4, ease: "easeInOut", when: "beforeChildren", staggerChildren: 0.06 },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 8 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.25, ease: "easeOut" } },
+}
+
 function ServiceCard({ service, index }: { service: Service; index: number }) {
   const IconComponent = service.icon
-  const [open, setOpen] = useState(false)
   const hasExtras = Array.isArray(service.extras) && service.extras.length > 0
-  const contentId = `service-extras-${index}`
 
   return (
     <motion.div
@@ -45,48 +56,25 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       ) : null}
 
       {hasExtras && (
-        <div className="mt-5">
-          <button
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls={contentId}
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
-          >
-            Ver lista de servicios
-            <motion.span
-              animate={{ rotate: open ? 180 : 0 }}
-              transition={{ duration: 0.2 }}
-              className="inline-flex"
-            >
-              <ChevronDown className="w-4 h-4" />
-            </motion.span>
-          </button>
-
-          <AnimatePresence initial={false}>
-            {open && (
-              <motion.div
-                id={contentId}
-                key="extras"
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="overflow-hidden"
+        <motion.div
+          className="overflow-hidden mt-5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          
+        >
+          <ul className="text-left text-sm text-gray-700 mt-1 space-y-2 max-w-sm mx-auto">
+            {service.extras!.map((item, i) => (
+              <motion.li
+                key={i}
+                
+                className="pl-3 border-l-2 border-gray-200"
               >
-                <ul className="text-left text-sm text-gray-700 mt-4 space-y-2 max-w-sm mx-auto">
-                  {service.extras!.map((item, i) => (
-                    <li
-                      key={i}
-                      className="pl-3 border-l-2 border-gray-200"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
       )}
     </motion.div>
   )
@@ -123,7 +111,7 @@ export default function ServicesSection() {
         "Expedición de copias certificadas",
         "Fe de hechos",
         "Ratificaciones de firmas",
-        "Donaciones de dinero",        
+        "Donaciones de dinero",
       ],
     },
   ]
@@ -141,7 +129,7 @@ export default function ServicesSection() {
           NUESTROS SERVICIOS
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}

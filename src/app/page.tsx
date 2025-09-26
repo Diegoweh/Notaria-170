@@ -1,5 +1,6 @@
 "use client";
 
+import MapBanner from "@/components/layout/MapBanner";
 import ServicesSection from "@/components/layout/ServicesSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -118,6 +119,18 @@ export default function Home() {
         </motion.div>
       </div>
     </motion.section>
+
+    <MapBanner
+        title="Notaría H."
+        subtitle="Estamos aquí para ayudarte"
+        address="Dr. Rafael Domínguez 308-A, Palos Prietos, 82010, Mazatlán, Sinaloa"
+        // Si prefieres precisión por coordenadas:
+        // coords="23.2179,-106.4166"
+        zoom={16}
+        sizeClassName="aspect-[21/9] md:aspect-[24/9]" // o "h-72 md:h-96"
+        roundedClassName="rounded-3xl"
+        darkOverlay
+      />
 
 
 </>

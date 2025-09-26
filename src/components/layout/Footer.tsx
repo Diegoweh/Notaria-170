@@ -32,37 +32,50 @@ export function Footer() {
           {/* Contact Information */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Contacto</h4>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-                <a
-                  href="https://wa.me/526699950860"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-300 hover:text-yellow-400 transition-colors"
-                >
-                  669 995 0860
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-                <a
-                  href="mailto:contacto@humaranmaz.com"
-                  className="text-slate-300 hover:text-yellow-400 transition-colors"
-                >
-                  contacto@humaranmaz.com
-                </a>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
-                <div className="text-slate-300 text-sm">
-                  <p>Dr. Rafael Domínguez 308-A</p>
-                  <p>Palos Prietos, 82010</p>
-                  <p>Mazatlán, Sinaloa</p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { number: "669 985 0791", link: "https://wa.me/526699850791" },
+                { number: "669 981 1028", link: "https://wa.me/526699811028" },
+                { number: "669 982 4024", link: "https://wa.me/526699824024" },
+                { number: "669 982 1465", link: "https://wa.me/526699821465" },
+                { number: "669 985 0860", link: "https://wa.me/526699850860" },
+              ].map((tel, i) => (
+                <div key={i} className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+                  <a
+                    href={tel.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-300 hover:text-yellow-400 transition-colors text-sm"
+                  >
+                    {tel.number}
+                  </a>
                 </div>
+              ))}
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <Mail className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+              <a
+                href="mailto:contacto@humaranmaz.com"
+                className="text-slate-300 hover:text-yellow-400 transition-colors"
+              >
+                contacto@humaranmaz.com
+              </a>
+            </div>
+
+            <div className="flex items-start space-x-3">
+              <MapPin className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+              <div className="text-slate-300 text-sm">
+                <p>Dr. Rafael Domínguez 308-A</p>
+                <p>Palos Prietos, 82010</p>
+                <p>Mazatlán, Sinaloa</p>
               </div>
             </div>
           </div>
+
+
 
 
           {/* Hours */}
@@ -72,7 +85,7 @@ export function Footer() {
               <Clock className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
               <div className="text-slate-300 text-sm">
                 <p>Lunes - Viernes</p>
-                <p>9:00 AM - 6:00 PM</p>
+                <p>9:00 AM - 2:00 PM & 4:00 PM - 7:00 PM</p>
                 <p className="mt-2">Sábados</p>
                 <p>9:00 AM - 2:00 PM</p>
               </div>
