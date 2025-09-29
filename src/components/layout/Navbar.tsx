@@ -103,7 +103,7 @@ export function Navbar() {
                            transition-all duration-200 shadow-lg hover:shadow-xl"
                   asChild
                 >
-                  <Link href="https://wa.me/526699950860" className="flex items-center gap-2">
+                  <Link href="https://wa.link/mp8vb3" target="_blank" className="flex items-center gap-2">
                     <MapPin className="h-4 w-4" />
                     Agendar Cita
                   </Link>
