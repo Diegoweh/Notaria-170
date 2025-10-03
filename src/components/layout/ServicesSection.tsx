@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Building2, Handshake, Home, FileText } from "lucide-react"
+import { Building2, Handshake, Home, FileText, Users, Briefcase, FileCheck } from "lucide-react"
 
 type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>
 
@@ -83,37 +83,71 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 export default function ServicesSection() {
   const services: Service[] = [
     {
-      icon: Building2,
-      title: "DESARROLLO INMOBILIARIO",
-      description:
-        "Asesoría y formalización de operaciones inmobiliarias, desde la compraventa hasta la constitución de regímenes de complejos habitacionales y comerciales.",
-    },
-    {
-      icon: Handshake,
-      title: "SOCIEDADES Y PODERES",
-      description:
-        "Constitución de sociedades, protocolizaciones de actas de asamblea, otorgamiento de poderes y asesoría integral en materia corporativa.",
-    },
-    {
-      icon: Home,
-      title: "VIVIENDA",
-      description:
-        "Compraventas, créditos hipotecarios, mutuos, cancelaciones, Fideicomisos de Zona Restringida, de Administración y de Garantía y todo tipo de trámites relacionados con la vivienda, con la seguridad jurídica que usted necesita.",
-    },
-    {
-      icon: FileText,
-      title: "OTROS SERVICIOS",
-      description:
-        "Lista de servicios adicionales que también realizamos en la notaría.",
-      extras: [
-        "Testamentos",
-        "Cartas de Identidad",
-        "Expedición de copias certificadas",
-        "Fe de hechos",
-        "Ratificaciones de firmas",
-        "Donaciones de dinero",
-      ],
-    },
+    icon: Building2,
+    title: "Servicios de Derecho Inmobiliario",
+    description:
+      "Trámites notariales relacionados con bienes inmuebles y derechos reales.",
+    extras: [
+      "Compraventa de Inmuebles",
+      "Adjudicación por Remate Judicial",
+      "Fusión de Predios",
+      "Constitución de Hipotecas",
+      "Constitución de Usufructo",
+      "Donación de Inmuebles",
+      "Constitución de Condominios",
+      "Subdivisión de Predios",
+      "Cancelación de Hipotecas",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Servicios de Derecho Civil y Familiar",
+    description:
+      "Asesoría y trámites notariales en materia civil y familiar.",
+    extras: [
+      "Testamento",
+      "Revocación de Poderes",
+      "Divorcio por mutuo consentimiento",
+      "Otorgamiento de Poderes",
+      "Tramitación de sucesión ante notario",
+      "Aclaración de actas del registro civil",
+    ],
+  },
+  {
+    icon: Briefcase,
+    title: "Servicios de Derecho Corporativo",
+    description:
+      "Constitución, transformación y formalización de actos jurídicos de empresas.",
+    extras: [
+      "Constitución de Empresas",
+      "Disolución",
+      "Fusión",
+      "Transformación",
+      "Revocación de Poderes",
+      "Protocolización de Actas de Asamblea y Actas de Consejo",
+      "Fideicomisos",
+      "Liquidación",
+      "Escisión",
+      "Otorgamiento de Poderes",
+      "Constitución de Garantías Mobiliarias",
+      "Asesoría y elaboración de contratos",
+    ],
+  },
+  {
+    icon: FileCheck,
+    title: "Servicios Especiales",
+    description:
+      "Otros servicios notariales que brindan certeza jurídica.",
+    extras: [
+      "Fe de Hechos",
+      "Interpelaciones",
+      "Cotejo de Documentos",
+      "Notificaciones",
+      "Ratificación de firmas en documentos",
+      "Expedición de Copias Certificadas",
+      "Declaración Testimonial de Nombre",
+    ],
+  },
   ]
 
   return (
