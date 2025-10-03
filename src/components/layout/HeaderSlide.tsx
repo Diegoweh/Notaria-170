@@ -109,7 +109,7 @@ export default function HeaderSlider({
               />
 
               {/* Overlay gradient for legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
 
               {/* Text block center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white select-none px-4">
